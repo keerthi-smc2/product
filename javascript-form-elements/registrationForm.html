@@ -1,0 +1,121 @@
+<html>
+
+<head>
+    
+    <style>
+        label {
+            display: inline-block;
+            width: 228px;
+            color: #111111;
+        }
+
+        input {
+            padding: 4px;
+            display: inline-block;
+        }
+
+        .text-center,
+        .getformvalues12 {
+            text-align: center;
+        }
+
+        fieldset {
+            width: 760px;
+        }
+
+        body {
+            align-content: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="getformvalues12" style="width:730px; margin:0 auto;">
+        <fieldset>
+            <legend style="text-align:center;">
+                <h1>Registration Form</h1>
+            </legend>
+            <form name="register" id="register" action="ecommerce.html" onsubmit="signup()">
+                <div class="getformvalues">
+                    <div class="input">
+                        <label> <b>First Name:</b></label>
+                        <input type="text" size="35" id="firstname" name="Firstname" placeholder="Firstname*" required>
+                        <label for="firstname" class="error"></label> <br>
+                    </div><br>
+                    <div class="input">
+                        <label> <b>Last Name:</b></label>
+                        <input type="text" size="35" id="lastname" name="Lastname" placeholder="Lastname*" required>
+                        <label for="lastname" class="error"></label><br>
+                    </div><br>
+                    <div class="input-row">
+                        <label><b>Gender:</b></label>
+                        <input type="radio" id="gender" name="gender" value="male"/>Male  
+                        <input type="radio" id="gender" name="gender" value="female"/>Female  
+                        <label for="gender" class="error"></label>
+                    </div><br>
+                    <div class="input">
+                        <label for="email"><b>Enter Email:</b></label>
+                        <input type="email" id="email" size="35" name="email" placeholder="Email" required>
+                        <label for="email" class="error"></label>
+                    </div><br>
+
+                    <div class="input">
+                        <label for="email_again"><b>Confirm Email:</b></label>
+                        <input type="email" id="email_again" size="35" name="email_again" placeholder="Confirm Email"
+                            required>
+                        <label for="email_again" class="error"></label>
+                    </div><br>
+
+                    <div class="input">
+                        <label for="password"><b>Enter Password:</b></label>
+                        <input type="password" id="password" size="35" name="password" placeholder="password">
+                        <label for="email" class="error"></label>
+                    </div><br>
+
+                    <div class="input">
+                        <label for="password_again"><b>Confirm Password:</b></label>
+                        <input type="password" id="password_again" size="35" name="password_again"
+                            placeholder="Confirm Password" required>
+                        <label for="password_again" class="error"></label>
+                    </div><br>
+
+                    <div class="input">
+                        <label><b>Hobbies:</b></label><br>
+                        <div class="container" style="width:302px; margin:0 auto;">
+                            <input type="checkbox" name="hobbies" id="checkbox-1" value="Reading Books" />Reading Books
+                            <input type="checkbox" name="hobbies" id="checkbox-2" value="Playing Games" />Playing
+                            Games<br>
+                            <input type="checkbox" name="hobbies" id="checkbox-3" value="Singing" />Singing<br>
+                            <input type="checkbox" name="hobbies" id="checkbox-4" value="Watching Movies" />Watching
+                            Movies <label for="hobbies" class="error"></label>
+                        </div>
+                    </div><br>
+
+                    <div class="input">
+                        <label><b>Country</b></label>
+                        <select name="country" id="register_country" style="width:120px">
+                            <option value="">Select Country</option>
+                            <option value="India">India</option>
+                            <option value="America">America</option>
+                            <option value="Africa">Africa</option>
+                            <option value="China">China</option>
+                        </select>
+                        <label for="register_country" class="error"></label>
+                    </div><br>
+
+                    <div class="text-center">
+                        <input type="submit" id="btn" value="Submit" style="background-color:rgb(180, 183, 185);">
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"> </script>
+    <script type="text/javascript" src="register.js"></script>
+</body>
+
+</html>

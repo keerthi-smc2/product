@@ -1,0 +1,35 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+<script>  
+$(document).ready(function(){  
+    $("p").click(function(){  
+        $(this).hide();
+    });  
+    $(".heading").on('click', function(){ 
+         alert("You have clicked!");
+         $(this).css('background-color', 'purple');
+    });
+    $("#para").html("This is a Paragraph");
+    var count =0;
+    $('#btn').click(function (){
+           count = count + 1;
+        $('#list').append("<li> List Tag " + count + "</li>");
+    });
+});  
+</script>   
+</head>  
+<body>
+    <p id="para"></p>
+    <h1 class="heading">click me </h1> 
+    <p>Click me i will hide.</p> 
+    
+    <ul id="list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JQuery</li>
+    </ul>
+    <button id="btn">Add Li Tags</button>
+</body>  
+</html>  

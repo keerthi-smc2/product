@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>   -->
+
+    <title>Document</title>
+</head>
+
+<body>
+    Country:
+    <select id="country">
+        <option value="" id="">---Select Country---</option>
+        <option value="US" id="us">US</option>
+        <option value="CA" id="ca">Canada</option>
+    </select>
+    State:
+    <select id="state">
+        <option value="">---Select State---</option>
+    </select>
+    <div class="result"></div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- <script src="https://gist.github.com/mshafrir/2646763.js"></script> -->
+    <script>
+        $(function () {
+            $("#country").on("change", function () {
+                var url;
+                var stateOptions = "";
+                var country = $(this).val();
+                if (country == "US") {
+                    url =
+                        "https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_hash.json";
+                } else {
+                    url =
+                        "https://gist.githubusercontent.com/pbojinov/a87adf559d2f7e81d86ae67e7bd883c7/raw/f34362c96cce2e40b1cab4e330f4affb6c12d37e/canada_states_titlecase.json";
+                }
+                jQuery.ajax({
+                    url: url,
+                    success: function (result) {
+                        var x = JSON.parse(result);
+                        // console.log(result);
+                        // jQuery('.result').html(result);
+                        stateOptions = "<option value=''>---Select State---</option>";
+                        if (country == "US") {
+                            $.each(x, function (stateCode, stateName) {
+                                stateOptions +=
+                                    "<option value='" +
+                                    stateCode +
+                                    "'>" +
+                                    stateName +
+                                    "</option>";
+                            });
+                        } else if(country == "CA"){
+                            for (let i = 0; i < x.length; i++) {
+                                stateOptions +=
+                                    "<option value='" +
+                                    x[i].abbreviation +
+                                    "'>" +
+                                    x[i].name +
+                                    "</option>";
+                            }
+                        }
+
+                        $("#state").html(stateOptions);
+                        // jQuery('.result').html(JSON.stringify(result));
+                    },
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

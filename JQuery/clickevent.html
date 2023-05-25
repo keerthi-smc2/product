@@ -1,0 +1,26 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+<script>  
+$(document).ready(function(){  
+    $("p").click(function(){  
+    $("#p2").toggle();
+    $("#p1").css({"background-color":"Yellow", "font-size":"60%"});
+        
+    });  
+});  
+$(document).ready(function(){  
+    $("h1,span,h3").click(function(){  
+        $(this).hide();  
+    });  
+});  
+</script>  
+</head>  
+<body> 
+<h1>Heading1</h1> 
+<p id="p1">Hi, am paragraph</p> 
+<p id="p2"> Hi am second Paragraph</p>
+<span> Span Tag</span> 
+</body>  
+</html>  
